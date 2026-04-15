@@ -4,7 +4,7 @@
 <p align='center'>
 	<img src="https://img.shields.io/badge/Python_3.8%2B-3776AB.svg?style=flat-square&logo=python&color=3776AB&logoColor=white" alt="Python 3.8+">
 	<img src="https://img.shields.io/badge/PyTorch-EE4C2C.svg?style=flat-square&logo=pytorch&logoColor=white" alt="PyTorch">
-	<img src="https://img.shields.io/badge/Survival_Analysis-DeepSurv-0F766E.svg?style=flat-square" alt="Survival Analysis">
+	<img src="https://img.shields.io/badge/paper-DeepSurv-0F766E.svg?style=flat-square&logo=readthedocs&logoColor=white" alt="Survival Analysis">
 </p>
 
 This repo comes at first as an attempt to replicate *DeepSurv*[^1] using pytorch, a first modern-deep learning approach that has been proved to be effective. _To be extended to replicate other models_  
@@ -48,6 +48,7 @@ Essentially, the main components are:
 - neural network model class inheriting from `torch.nn.Module` (as is the case for any pytorch model) $\iff g(x)$
 - custom loss function for the negative log partial likelihood $\iff \ell(\theta)$
 - training loop to optimize the model parameters using the defined loss function
+
 
 ## Beyond `DeepSurv`
 
