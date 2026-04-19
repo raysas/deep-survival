@@ -49,12 +49,20 @@ Essentially, the main components are:
 - custom loss function for the negative log partial likelihood $\iff \ell(\theta)$
 - training loop to optimize the model parameters using the defined loss function
 
+Any neural network architecture can be used to get $g(x)$ - risk score (or, to be precise, the log risk score). For the user it will be the same interface as in using pytorch for any classification problem. Somt hings are implemented around it in Dataset and Loss to accomodate for the target nature ((time, event) pairs) as well as the loss function and all. Added at the end a function to stratify risk groups and plot KM which is usually employed to visualize the results of survival models.
+
+
+To test implementation:
+
+```bash
+pip install .
+python -m src.main
+```
+
 
 ## Beyond `DeepSurv`
 
-
-
-
+- [ ] CoxTime
 
 [^1]: Katzman, Jared L., et al. "DeepSurv: personalized treatment recommender system using a Cox proportional hazards deep neural network." BMC medical research methodology 18.1 (2018): 1-12.
 
