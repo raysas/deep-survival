@@ -50,6 +50,18 @@ Essentially, the main components are:
 - custom loss function for the negative log partial likelihood $\iff \ell(\theta)$
 - training loop to optimize the model parameters using the defined loss function
 
+So to be able to do this, the main extensions are in `dataset` and `loss` modules, where new classes inheritting from `torch.utils.data.Dataset` and `torch.nn.Module` are defined respectively:
+
+- `SurvivalDataset`: takes as input the features, event indicators, and times, and implements the `__getitem__` method to return a tuple of (features, event, time) for each index (eq to Dataset behavior in pytorch)
+- `NegativeLogPartialLikelihood`: implements the `forward` method to compute the negative log partial
+
+```python
+dataset = SurvivalDataset(X, events, times)
+loss_fn = NegativeLogPartialLikelihood()
+```	
+
+_torch;s functionalities from len, getitem to forward in loss are tested using pytest in `tests` module_
+
 Any neural network architecture can be used to get $g(x)$ - risk score (or, to be precise, the log risk score). For the user it will be the same interface as in using pytorch for any classification problem. Somt hings are implemented around it in Dataset and Loss to accomodate for the target nature ((time, event) pairs) as well as the loss function and all. Added at the end a function to stratify risk groups and plot KM which is usually employed to visualize the results of survival models.
 
 
