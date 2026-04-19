@@ -45,6 +45,7 @@ where $\theta$ are the parameters of the nn, and $g(x)$ is the output of the nn 
 ## Implementation
 
 Essentially, the main components are:
+- dataset that accomodates for the nature of the data (time-to-event) and the loss function (negative log partial likelihood); an item of which is a tuple of (features, event, time)
 - neural network model class inheriting from `torch.nn.Module` (as is the case for any pytorch model) $\iff g(x)$
 - custom loss function for the negative log partial likelihood $\iff \ell(\theta)$
 - training loop to optimize the model parameters using the defined loss function
