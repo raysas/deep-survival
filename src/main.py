@@ -58,7 +58,7 @@ def risk_groups(model, dataset):
         mask = risk_group == group
         kmf.fit(dataset.time[mask], event_observed=dataset.event[mask], label=group)
         kmf.plot_survival_function()
-    plt.title('Kaplan-Meier risk groups')
+    plt.title('Kaplan-Meier risk groups based on DeepSurv risk scores')
     plt.show()
 
 if __name__ == "__main__":

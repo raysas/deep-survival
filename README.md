@@ -59,6 +59,7 @@ pip install .
 python -m src.main
 ```
 
+![](assets/KM.png)
 
 ## Beyond `DeepSurv`
 
